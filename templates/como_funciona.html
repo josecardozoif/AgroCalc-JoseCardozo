@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<!--
+  como_funciona.html — AgroCalc
+  Módulo: Como Funciona (ITC — Introdução à Tecnologia da Computação)
+  Conteúdo:
+    - Como o sistema AgroCalc funciona internamente (CPU, memória, armazenamento)
+    - Linha do tempo das tecnologias usadas no projeto
+    - Glossário de termos técnicos
+-->
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgroCalc — Como Funciona</title>
+  <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="stylesheet" href="../static/css/como_funciona.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body data-page="como_funciona">
+
+  <div id="site-header"></div>
+
+  <main>
+    <h1 class="secao-titulo">Como Funciona o AgroCalc</h1>
+
+    <!-- Arquitetura do sistema -->
+    <section style="margin-bottom:2.5rem;">
+      <h2 class="secao-titulo" style="font-size:1.2rem;">Arquitetura: CPU, Memória e Armazenamento</h2>
+      <p>
+        Qualquer computador — incluindo o servidor que roda o AgroCalc —
+        funciona com três componentes fundamentais que trabalham juntos:
+      </p>
+
+      <div class="arq-grid">
+        <div class="arq-card">
+          <div class="arq-titulo">CPU (Processador)</div>
+          <div class="arq-desc">
+            Executa os cálculos matemáticos do sistema:<br>
+            juros compostos, determinantes, conversões de base numérica.
+            Cada fórmula Python se torna instruções que a CPU executa em microssegundos.
+          </div>
+        </div>
+
+        <div class="arq-card">
+          <div class="arq-titulo">Memória RAM</div>
+          <div class="arq-desc">
+            Armazena temporariamente os dados enquanto você usa o sistema:
+            os valores digitados nos formulários, as matrizes de talhões,
+            os resultados calculados — tudo em memória volátil (some ao fechar).
+          </div>
+        </div>
+
+        <div class="arq-card">
+          <div class="arq-titulo">Armazenamento (HD/SSD)</div>
+          <div class="arq-desc">
+            Guarda permanentemente os arquivos do projeto:
+            os arquivos <code>.html</code>, <code>.css</code>, <code>.js</code> e <code>.py</code>
+            que compõem o AgroCalc e os gráficos exportados pelo Matplotlib.
+          </div>
+        </div>
+      </div>
+
+      <!-- Fluxo de dados quando o usuário usa o sistema -->
+      <div class="card">
+        <h3 style="margin-bottom:1rem;">Fluxo de dados ao calcular um financiamento</h3>
+        <div class="fluxo">
+          <div class="fluxo-passo">1. Usuário preenche o form (HTML)</div>
+          <div class="fluxo-seta">→</div>
+          <div class="fluxo-passo">2. JavaScript valida os campos</div>
+          <div class="fluxo-seta">→</div>
+          <div class="fluxo-passo">3. Dados vão para o Python (RAM)</div>
+          <div class="fluxo-seta">→</div>
+          <div class="fluxo-passo">4. CPU executa a fórmula Price</div>
+          <div class="fluxo-seta">→</div>
+          <div class="fluxo-passo">5. Resultado exibido no HTML</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Linha do tempo -->
+    <section style="margin-bottom:2.5rem;">
+      <h2 class="secao-titulo" style="font-size:1.2rem;">Linha do Tempo do Projeto</h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-ano">Etapa 1</div>
+          <div class="timeline-titulo">Planejamento — Wireframe e Estrutura HTML</div>
+          <div class="timeline-desc">
+            Definição dos módulos, esboço das telas no papel (wireframe),
+            criação da estrutura de pastas e dos arquivos base do projeto.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-ano">Etapa 2</div>
+          <div class="timeline-titulo">CSS Responsivo e Modo Escuro</div>
+          <div class="timeline-desc">
+            Aplicação do CSS com Grid e Flexbox para responsividade mobile,
+            implementação do toggle de dark mode com CSS e JavaScript.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-ano">Etapa 3</div>
+          <div class="timeline-titulo">Scripts Python e Integração com Forms</div>
+          <div class="timeline-desc">
+            Desenvolvimento dos módulos Python (custo, financiamento, conversor,
+            matriz NumPy, blend NPK, gráficos Matplotlib) e integração com os
+            formulários HTML via Flask.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-ano">Etapa 4</div>
+          <div class="timeline-titulo">Testes, Relatório e Apresentação</div>
+          <div class="timeline-desc">
+            Testes de responsividade em diferentes dispositivos,
+            produção do relatório do projeto e slides de apresentação.
+            Deploy no GitHub Pages ou Netlify.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Glossário -->
+    <section>
+      <h2 class="secao-titulo" style="font-size:1.2rem;">Glossário de Termos Técnicos</h2>
+
+      <div class="card">
+        <ul class="glossario-lista">
+          <li>
+            <strong>HTML (HyperText Markup Language)</strong> —
+            Linguagem de marcação usada para estruturar o conteúdo das páginas web.
+            Define elementos como títulos, parágrafos, formulários e tabelas.
+          </li>
+          <li>
+            <strong>CSS (Cascading Style Sheets)</strong> —
+            Linguagem de estilos que controla a aparência visual do HTML:
+            cores, fontes, espaçamentos, layout e responsividade.
+          </li>
+          <li>
+            <strong>JavaScript</strong> —
+            Linguagem de programação executada no navegador que adiciona
+            interatividade às páginas sem precisar recarregá-las.
+          </li>
+          <li>
+            <strong>Python</strong> —
+            Linguagem de programação de alto nível usada para os cálculos
+            matemáticos do AgroCalc: funções afins, juros compostos,
+            álgebra linear e geração de gráficos.
+          </li>
+          <li>
+            <strong>NumPy</strong> —
+            Biblioteca Python para computação numérica. Usada no AgroCalc
+            para representar a matriz de produtividade dos talhões e resolver
+            sistemas lineares com <code>numpy.linalg.solve</code>.
+          </li>
+          <li>
+            <strong>Matplotlib</strong> —
+            Biblioteca Python para geração de gráficos e visualizações.
+            Usada no AgroCalc para exportar gráficos de custo e financiamento como imagens.
+          </li>
+          <li>
+            <strong>Sistema binário (base 2)</strong> —
+            Sistema de numeração com apenas dois dígitos (0 e 1).
+            É a linguagem nativa dos computadores, pois representa os estados
+            elétrico-lógicos dos transistores.
+          </li>
+          <li>
+            <strong>Hexadecimal (base 16)</strong> —
+            Sistema de numeração com 16 símbolos (0–9 e A–F).
+            Muito usado em programação para representar valores binários
+            de forma mais compacta (ex.: cores CSS como <code>#2e7d32</code>).
+          </li>
+          <li>
+            <strong>Sistema linear</strong> —
+            Conjunto de equações lineares com múltiplas incógnitas.
+            No AgroCalc, um sistema 3×3 é usado para descobrir quanto de cada
+            fertilizante usar para atingir o alvo NPK.
+          </li>
+          <li>
+            <strong>Determinante</strong> —
+            Valor escalar calculado a partir de uma matriz quadrada.
+            Se det ≠ 0, o sistema linear tem solução única.
+            Se det = 0, o sistema não tem solução única (dependência linear).
+          </li>
+          <li>
+            <strong>NPK</strong> —
+            Sigla para Nitrogênio (N), Fósforo (P) e Potássio (K),
+            os três macronutrientes primários dos fertilizantes agrícolas.
+          </li>
+          <li>
+            <strong>Talhão</strong> —
+            Subdivisão de uma propriedade rural usada para organizar o manejo
+            agrícola. Cada talhão pode ter características de solo e produtividade diferentes.
+          </li>
+          <li>
+            <strong>Função afim</strong> —
+            Função matemática da forma <code>f(x) = ax + b</code>.
+            No AgroCalc, usada para calcular o custo de produção:
+            <code>C(x) = custo_fixo + custo_variável × x</code>.
+          </li>
+          <li>
+            <strong>Juros compostos (Tabela Price)</strong> —
+            Sistema de amortização de empréstimos onde os juros incidem sobre
+            o saldo devedor. Gera parcelas fixas ao longo do tempo.
+            Fórmula: <code>PMT = PV × [i(1+i)ⁿ] / [(1+i)ⁿ − 1]</code>.
+          </li>
+          <li>
+            <strong>Responsividade</strong> —
+            Capacidade de uma página web de se adaptar a diferentes tamanhos
+            de tela (desktop, tablet, celular). Implementada com CSS Grid e Flexbox.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="../static/js/nav.js"></script>
+
+</body>
+
+</html>

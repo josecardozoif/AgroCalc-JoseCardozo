@@ -1,0 +1,151 @@
+/* Configuração da matriz */
+.config-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.campo label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--cor-texto-suave);
+    margin-bottom: 0.3rem;
+}
+
+.campo input {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
+    font-size: 1rem;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+/* Grade de inputs da matriz */
+#grade-inputs {
+    display: grid;
+    gap: 0.4rem;
+    margin: 1rem 0 1.5rem;
+}
+
+.celula-input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 4px;
+    text-align: center;
+    font-size: 0.9rem;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+/* Mapa de calor — tabela de resultados */
+.mapa-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.mapa-tabela th {
+    background: var(--cor-primaria);
+    color: #fff;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.mapa-tabela td {
+    padding: 0.6rem;
+    text-align: center;
+    font-size: 0.9rem;
+    border: 1px solid var(--cor-borda);
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+/* Cabeçalho de linha (nome do setor) */
+.mapa-tabela td.setor-label {
+    background: var(--cor-primaria);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+/* Cores de calor: vermelho → amarelo → verde */
+.calor-baixo {
+    background: #ffcdd2;
+    color: #b71c1c;
+}
+
+.calor-medio {
+    background: #fff9c4;
+    color: #f57f17;
+}
+
+.calor-alto {
+    background: #c8e6c9;
+    color: #1b5e20;
+}
+
+/* Legenda */
+.legenda {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+}
+
+.legenda-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.legenda-cor {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+/* Estatísticas da matriz */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.stat-card {
+    background: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-borda);
+    padding: 0.8rem;
+    text-align: center;
+}
+
+.stat-card .stat-valor {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--cor-primaria);
+}
+
+.stat-card .stat-label {
+    font-size: 0.78rem;
+    color: var(--cor-texto-suave);
+    margin-top: 0.2rem;
+}
+
+@media (max-width: 600px) {
+    .config-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}

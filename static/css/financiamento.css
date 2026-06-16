@@ -1,0 +1,96 @@
+/* Formulário em duas colunas no desktop */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* Campo ocupando linha inteira */
+.form-grid .full {
+    grid-column: 1 / -1;
+}
+
+.campo label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: var(--cor-texto-suave);
+}
+
+.campo input {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
+    font-size: 1rem;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+.campo input:focus {
+    outline: 2px solid var(--cor-primaria-soft);
+    border-color: var(--cor-primaria-soft);
+}
+
+/* Tabela de parcelas */
+.tabela-parcelas {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.tabela-parcelas th {
+    background: var(--cor-primaria);
+    color: #fff;
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+}
+
+.tabela-parcelas td {
+    padding: 0.5rem 0.8rem;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.tabela-parcelas tr:nth-child(even) td {
+    background: var(--cor-fundo);
+}
+
+/* Cards de resumo */
+.resumo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.resumo-item {
+    background: var(--cor-primaria);
+    color: #fff;
+    border-radius: var(--raio-borda);
+    padding: 1rem;
+    text-align: center;
+}
+
+.resumo-item .valor {
+    font-size: 1.4rem;
+    font-weight: 700;
+    display: block;
+    margin-top: 0.3rem;
+}
+
+.resumo-item .label {
+    font-size: 0.8rem;
+    opacity: 0.85;
+}
+
+@media (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .resumo-grid {
+        grid-template-columns: 1fr;
+    }
+}

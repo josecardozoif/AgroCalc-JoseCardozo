@@ -1,0 +1,113 @@
+/* Grid do formulário de fontes */
+.fontes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.fonte-card {
+    background: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-borda);
+    padding: 1rem;
+}
+
+.fonte-titulo {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--cor-primaria);
+    margin-bottom: 0.8rem;
+    text-align: center;
+}
+
+.campo label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--cor-texto-suave);
+    margin-bottom: 0.2rem;
+}
+
+.campo input {
+    width: 100%;
+    padding: 0.45rem 0.6rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    background: var(--cor-superficie);
+    color: var(--cor-texto);
+    margin-bottom: 0.6rem;
+}
+
+/* Grid do alvo NPK */
+.alvo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Resultado do sistema */
+.resultado-blend {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.blend-item {
+    background: var(--cor-primaria);
+    color: #fff;
+    border-radius: var(--raio-borda);
+    padding: 1rem;
+    text-align: center;
+}
+
+.blend-item .blend-kg {
+    font-size: 1.6rem;
+    font-weight: 700;
+    display: block;
+}
+
+.blend-item .blend-label {
+    font-size: 0.82rem;
+    opacity: 0.85;
+    margin-top: 0.2rem;
+}
+
+/* Caixa de detalhes matemáticos */
+.detalhe-matematico {
+    background: var(--cor-fundo);
+    border-left: 4px solid var(--cor-acento);
+    border-radius: 0 var(--raio-borda) var(--raio-borda) 0;
+    padding: 1rem 1.2rem;
+    margin-top: 1rem;
+    font-size: 0.88rem;
+    font-family: monospace;
+    line-height: 1.8;
+}
+
+/* Aviso de sistema sem solução */
+.aviso-erro {
+    background: #ffebee;
+    border: 1px solid #ef9a9a;
+    border-radius: var(--raio-borda);
+    padding: 1rem;
+    color: var(--cor-perigo);
+    margin-top: 1rem;
+}
+
+@media (max-width: 700px) {
+    .fontes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .alvo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .resultado-blend {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,7 @@
+# Instale com: pip install -r requirements.txt
+#ou
+# pip install flask numpy matplotlib
+
+flask>=3.0.0 # Servidor web e roteamento
+numpy>=1.26.0 # Matrizes, álgebra linear (matriz_talhoes, blend, etc.)
+matplotlib>=3.8.0 # Geração de gráficos e exportação em imagemm

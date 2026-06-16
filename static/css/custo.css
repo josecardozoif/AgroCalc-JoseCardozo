@@ -1,0 +1,78 @@
+/* custo.css — AgroCalc
+   Estilos específicos da página de Custo de Produção */
+
+/* Inputs do formulário */
+main .card label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--cor-texto-suave);
+  margin-bottom: 0.3rem;
+  margin-top: 0.8rem;
+}
+
+main .card input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+  font-size: 1rem;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  transition: border-color 0.2s;
+}
+
+main .card input:focus {
+  outline: none;
+  border-color: var(--cor-primaria-soft);
+}
+
+/* Grid dos cards de resumo */
+.resumo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.resumo-item {
+  background: var(--cor-primaria);
+  color: #fff;
+  border-radius: var(--raio-borda);
+  padding: 1rem;
+  text-align: center;
+}
+
+.resumo-item .resumo-label {
+  display: block;
+  font-size: 0.78rem;
+  opacity: 0.85;
+  margin-bottom: 0.4rem;
+}
+
+.resumo-item .resumo-valor {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .resumo-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .resumo-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grafico-custo {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  border-radius: 8px;
+  margin: auto;
+  display: block;
+}

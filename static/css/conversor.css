@@ -1,0 +1,138 @@
+/* Abas de navegação interna entre os dois conversores */
+.abas {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--cor-borda);
+    padding-bottom: 0;
+}
+
+.aba-btn {
+    padding: 0.5rem 1.2rem;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    cursor: pointer;
+    color: var(--cor-texto-suave);
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.aba-btn.ativa {
+    color: var(--cor-primaria);
+    font-weight: 700;
+    border-bottom-color: var(--cor-primaria);
+}
+
+.painel-aba {
+    display: none;
+}
+
+.painel-aba.ativo {
+    display: block;
+}
+
+/* Grade de resultados do conversor */
+.resultado-bases {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.base-card {
+    background: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-borda);
+    padding: 1rem;
+    text-align: center;
+}
+
+.base-card .base-titulo {
+    font-size: 0.8rem;
+    color: var(--cor-texto-suave);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.base-card .base-valor {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--cor-primaria);
+    word-break: break-all;
+}
+
+/* Campo de entrada do conversor */
+.campo label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--cor-texto-suave);
+    margin-bottom: 0.3rem;
+}
+
+.campo input,
+.campo select {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
+    font-size: 1rem;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+.entrada-grupo {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Tabela de operações lógicas */
+.tabela-logica {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.tabela-logica th {
+    background: var(--cor-primaria);
+    color: #fff;
+    padding: 0.5rem 0.8rem;
+    text-align: center;
+}
+
+.tabela-logica td {
+    padding: 0.4rem 0.8rem;
+    border-bottom: 1px solid var(--cor-borda);
+    text-align: center;
+}
+
+/* Resultado de área */
+.resultado-area {
+    background: var(--cor-primaria);
+    color: #fff;
+    border-radius: var(--raio-borda);
+    padding: 1.5rem;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.resultado-area .valor-ha {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+@media (max-width: 600px) {
+    .resultado-bases {
+        grid-template-columns: 1fr;
+    }
+
+    .entrada-grupo {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,331 @@
+/*
+   style.css — AgroCalc
+   Estilos globais: variáveis, reset, header, nav, footer,
+   grid de layout e utilitários.
+   Cada página pode importar seu próprio CSS adicional.
+*/
+
+/* Variáveis do CSS, afeta todas as páginas html */
+:root {
+    /* Cores Principais */
+    --cor-primaria: #548527;
+    --cor-primaria-soft: #6fa542;
+    --cor-acento: #a8c71d;
+    --cor-perigo: #c62828;
+
+    /* Neutros */
+    --cor-fundo: #f5f5f0;
+    --cor-superficie: #ffffff;
+    --cor-borda: #dde0d8;
+    --cor-texto: #1b2117;
+    --cor-texto-suave: #5a6458;
+
+    /* Tipografia */
+    --fonte-principal: "Segoe UI", system-ui, sans-serif;
+    --tamanho-base: 1rem;
+
+    /* Espaçamentos */
+    --espaco-xs: 0.25rem;
+    --espaco-sm: 0.5rem;
+    --espaco-md: 1rem;
+    --espaco-lg: 1.5rem;
+    --espaco-xl: 2.5rem;
+
+    /* Layout */
+    --largura-max: 1100px;
+    --altura-header: 64px;
+    --raio-borda: 8px;
+
+    /* Sombra */
+    --sombra-suave: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Tema Escuro */
+body.dark {
+    --cor-fundo: #161a14;
+    --cor-superficie: #1f2419;
+    --cor-borda: #2e3529;
+    --cor-texto: #e8ebe3;
+    --cor-texto-suave: #8a9485;
+    --sombra-suave: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+img {
+    width: 10%;
+    max-width: 500px;
+    /* Define o tamanho máximo da imagem */
+    height: auto;
+}
+
+/* Icons do Tema Escuro/Claro */
+#theme-toggle i {
+    font-size: 1.3rem;
+}
+
+#theme-toggle {
+    font-size: 1.5rem;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    font-size: var(--tamanho-base);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+
+    display: grid;
+    grid-template-rows: var(--altura-header) 1fr auto;
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: var(--cor-primaria-soft);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header e Nav */
+.site-header {
+    background-color: var(--cor-primaria);
+    color: #fff;
+    position: sticky;
+    /* fica no topo ao rolar */
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.header-inner {
+    max-width: var(--largura-max);
+    margin: 0 auto;
+    padding: 0 var(--espaco-lg);
+    height: var(--altura-header);
+
+    display: flex;
+    align-items: center;
+    gap: var(--espaco-lg);
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--espaco-sm);
+    flex-shrink: 0;
+}
+
+.logo-icon {
+    font-size: 1.5rem;
+}
+
+.logo-texto {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #fff;
+}
+
+/* Lista de links da nav */
+.nav-principal ul {
+    display: flex;
+    list-style: none;
+    gap: var(--espaco-xs);
+    flex-wrap: wrap;
+}
+
+.nav-principal a {
+    color: rgba(255, 255, 255, 0.85);
+    padding: var(--espaco-xs) var(--espaco-sm);
+    border-radius: var(--raio-borda);
+    font-size: 0.9rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav-principal a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Link da página ativa */
+.nav-principal a.ativo {
+    background: var(--cor-acento);
+    color: #1b2117;
+    font-weight: 600;
+}
+
+/* Botão Dark Mode */
+.btn-dark {
+    margin-left: auto;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: var(--raio-borda);
+    color: #fff;
+    padding: var(--espaco-xs) var(--espaco-sm);
+    cursor: pointer;
+    font-size: 1rem;
+    flex-shrink: 0;
+    transition: background 0.2s;
+
+}
+
+.btn-dark:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.btn-menu span {
+    display: block;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* Main */
+main {
+    max-width: var(--largura-max);
+    width: 100%;
+    margin: 0 auto;
+    padding: var(--espaco-xl) var(--espaco-lg);
+}
+
+/* Título de seção padrão */
+.secao-titulo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--cor-primaria);
+    margin-bottom: var(--espaco-lg);
+    border-left: 4px solid var(--cor-acento);
+    padding-left: var(--espaco-sm);
+}
+
+/* Card Reutilizável */
+.card {
+    background: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-borda);
+    padding: var(--espaco-lg);
+    box-shadow: var(--sombra-suave);
+}
+
+/* Grid de Cards*/
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--espaco-lg);
+}
+
+/* Botão primário padrão */
+.btn-primario {
+    display: inline-block;
+    background: var(--cor-primaria);
+    color: #fff;
+    padding: var(--espaco-sm) var(--espaco-lg);
+    border: none;
+    border-radius: var(--raio-borda);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn-primario:hover {
+    background: var(--cor-primaria-soft);
+}
+
+.btn-primario:active {
+    transform: scale(0.98);
+}
+
+/* Footer */
+.site-footer {
+    background: var(--cor-primaria);
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: var(--espaco-md) var(--espaco-lg);
+    font-size: 0.85rem;
+}
+
+.site-footer .footer-sub {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    margin-top: var(--espaco-xs);
+}
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+
+    .btn-menu {
+        display: flex;
+    }
+
+    /* Nav fica 'retrátil' no celular */
+    .nav-principal {
+        display: none;
+        position: absolute;
+        top: var(--altura-header);
+        left: 0;
+        right: 0;
+        background: var(--cor-primaria);
+        padding: var(--espaco-md);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        z-index: 99;
+    }
+
+    /* Quando o JS adiciona .aberto, exibe o menu */
+    .nav-principal.aberto {
+        display: block;
+    }
+
+    .nav-principal ul {
+        flex-direction: column;
+        gap: var(--espaco-xs);
+    }
+
+    .nav-principal a {
+        display: block;
+        padding: var(--espaco-sm) var(--espaco-md);
+        font-size: 1rem;
+    }
+
+    .header-inner {
+        position: relative;
+    }
+
+    main {
+        padding: var(--espaco-lg) var(--espaco-md);
+    }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+  Representa uma matriz de produtividade por setor (linha × coluna).
+  O usuário define linhas, colunas e valores. A tabela é gerada dinamicamente.
+  Futuramente os dados virão de um script Python com NumPy.
+-->
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgroCalc — Mapa de Talhões</title>
+  <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="stylesheet" href="../static/css/mapa_talhoes.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body data-page="mapa_talhoes">
+
+  <div id="site-header"></div>
+
+  <main>
+    <h1 class="secao-titulo">Mapa de Talhões</h1>
+    <p style="margin-bottom:1.5rem;">
+      Monte uma <strong>matriz de produtividade</strong> por setor do campo.
+      Cada célula representa a produção (sacas/ha) de um talhão.
+      As cores indicam o desempenho relativo de cada setor.
+    </p>
+
+    <!-- Configuração da matriz -->
+    <div class="card" style="margin-bottom:1.5rem;">
+      <h2 style="margin-bottom:1rem;">Configurar a matriz</h2>
+      <div class="config-grid">
+        <div class="campo">
+          <label for="num-linhas">Linhas (setores)</label>
+          <input type="number" id="num-linhas" value="3" min="1" max="8">
+        </div>
+        <div class="campo">
+          <label for="num-colunas">Colunas (subsetores)</label>
+          <input type="number" id="num-colunas" value="4" min="1" max="8">
+        </div>
+        <div class="campo">
+          <label for="unidade">Unidade de produção</label>
+          <input type="text" id="unidade" value="sc/ha" placeholder="Ex: sc/ha, t/ha">
+        </div>
+      </div>
+      <button class="btn-primario" onclick="gerarInputs()">Gerar grade de entrada</button>
+    </div>
+
+    <!-- Grade de inputs (gerada dinamicamente) -->
+    <div id="secao-inputs" style="display:none;">
+      <div class="card" style="margin-bottom:1.5rem;">
+        <h2 style="margin-bottom:1rem;">Informe a produtividade de cada talhão</h2>
+        <p style="color:var(--cor-texto-suave);margin-bottom:1rem;font-size:0.9rem;">
+          Preencha os valores abaixo. Linhas = setores (A, B, C…) | Colunas = subsetores (1, 2, 3…)
+        </p>
+        <div id="grade-inputs"></div>
+        <button class="btn-primario" onclick="gerarMapa()">Gerar Mapa de Talhões</button>
+      </div>
+    </div>
+
+    <!-- Resultado: mapa de calor + estatísticas -->
+    <div id="resultado" style="display:none;">
+      <div class="card">
+        <h2 style="margin-bottom:0.5rem;">Mapa de Produtividade</h2>
+        <div class="legenda">
+          <strong>Legenda:</strong>
+          <div class="legenda-item">
+            <div class="legenda-cor calor-alto"></div> Alto
+          </div>
+          <div class="legenda-item">
+            <div class="legenda-cor calor-medio"></div> Médio
+          </div>
+          <div class="legenda-item">
+            <div class="legenda-cor calor-baixo"></div> Baixo
+          </div>
+        </div>
+
+        <div style="overflow-x:auto; margin-top:1rem;">
+          <table class="mapa-tabela" id="tabela-mapa"></table>
+        </div>
+      </div>
+
+      <!-- Estatísticas da matriz -->
+      <div class="stats-grid" id="stats-grid"></div>
+    </div>
+
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="../static/js/nav.js"></script>
+  <script src="../static/js/mapa_talhoes.js"></script>
+
+</body>
+</html>

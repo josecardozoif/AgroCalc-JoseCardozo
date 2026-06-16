@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+  Esse é o arquivo modelo
+  Trocar o valor de data-page="NOME" pelo id da página definido no NAV_LINKS do nav.js
+
+  Estrutura de herança simulada:
+    nav.js injeta o <header> no div#site-header
+    nav.js injeta o <footer> no div#site-footer
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título da página-->
+  <title>AgroCalc - Página Base</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../static/css/style.css">
+
+  <!-- CSS específico desta página (descomente se precisar) -->
+  <!-- <link rel="stylesheet" href="static/css/nome-da-pagina.css"> -->
+</head>
+
+<!--
+  data-page="NOME"
+  O nav.js lê este atributo para saber qual link marcar como ativo.
+  Lê de acordo com o NAV_LINKS
+-->
+<body data-page="index">
+
+  <!-- #site-header - Header -->
+  <div id="site-header"></div>
+
+  <!-- Main -->
+  <main>
+
+    <!-- Exemplo de uso das classes CSS, trocar dependendo da página -->
+    <h1 class="secao-titulo">Base</h1>
+
+    <div class="grid-cards">
+      <div class="card">
+        <h2>Card de exemplo</h2>
+        <p>Conteúdo do card. Use .card para qualquer bloco de informação.</p>
+      </div>
+
+      <div class="card">
+        <h2>Formulário de exemplo</h2>
+        <p>Os forms de cálculo ficam dentro de cards como este.</p>
+        <button class="btn-primario" style="margin-top: 1rem">Calcular</button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- #site-footer - Rodapé -->
+  <div id="site-footer"></div>
+  <script src="static/js/nav.js"></script>
+
+  <!-- Scripts específicos desta página (colocar depois do nav.js) -->
+  <!-- <script src="static/js/nome-da-pagina.js"></script> -->
+
+</body>
+</html>

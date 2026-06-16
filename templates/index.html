@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgroCalc — Painel Principal</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body data-page="index">
+
+  <div id="site-header"></div>
+
+  <main>
+    <!-- Apresentação -->
+    <section>
+      <h1 class="secao-titulo">Boas Vindas ao AgroCalc</h1>
+      <p>Ferramentas de cálculo para pequenos e médios produtores rurais.</p>
+    </section>
+
+    <!-- Cards de acesso rápido ── -->
+    <section style="margin-top: 2rem;">
+      <h2 class="secao-titulo">Módulos disponíveis</h2>
+      <div class="grid-cards">
+
+        <div class="card">
+          <h3>Calculadora de Custo</h3>
+          <p>Calcula custo de produção por hectare usando função afim.</p>
+          <a class="btn-primario" href="/custo" style="margin-top:1rem;display:inline-block">Acessar</a>
+        </div>
+
+        <div class="card">
+          <h3>Financiamento Agrícola</h3>
+          <p>Simula parcelas com juros compostos para máquinas e equipamentos.</p>
+          <a class="btn-primario" href="/financiamento" style="margin-top:1rem;display:inline-block">Acessar</a>
+        </div>
+
+        <div class="card">
+          <h3>Conversor de Dados</h3>
+          <p>Converte entre decimal, binário e hexadecimal. Calcula área de talhão.</p>
+          <a class="btn-primario" href="/conversor" style="margin-top:1rem;display:inline-block">Acessar</a>
+        </div>
+
+        <div class="card">
+          <h3>Mapa de Talhões</h3>
+          <p>Matriz de produtividade por setor, visualizada em tabela.</p>
+          <a class="btn-primario" href="/mapa-talhoes" style="margin-top:1rem;display:inline-block">Acessar</a>
+        </div>
+
+        <div class="card">
+          <h3>Blend de Fertilizante</h3>
+          <p>Resolve sistema linear NPK e verifica determinante.</p>
+          <a class="btn-primario" href="/blend" style="margin-top:1rem;display:inline-block">Acessar</a>
+        </div>
+
+        <div class="card">
+          <h3>Como Funciona</h3>
+          <p>CPU, memória, armazenamento e conversão de sistemas de numeração.</p>
+          <a class="btn-primario" href="/como-funciona" style="margin-top:1rem;display:inline-block">Acessar</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="/static/js/nav.js"></script>
+
+</body>
+</html>
